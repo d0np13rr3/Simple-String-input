@@ -1,0 +1,97 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ui;
+
+import domein.Rekening;
+import java.util.Scanner;
+
+
+public class RekeningApplicatie {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    Rekening rekening= new Rekening(1,5, "Pi");
+        String houder = rekening.getHouder();
+        System.out.printf("Houder is %s%n", houder);
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Subject:");
+        String Subject = input.nextLine();
+        
+        
+        rekening.setHouder(Subject);
+        houder = rekening.getHouder();
+        
+        System.out.printf("Houder is nu%s%n", houder);
+     
+     
+    }
+    
+}
+
+// The other package
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package domein;
+
+/**
+ *
+ * @author Clark
+ */
+public class Rekening {
+    
+    private long rekeningnummer;
+    private double saldo;
+    private double number;
+    private String houder;
+    
+    public Rekening(long rekeningnummer, double saldo, String houder){
+    
+    setHouder(houder);
+               
+    }
+
+    public void setSaldo(double saldo) {
+          }
+    
+    private void setRekeningnummer(long rekeningnummer) {
+        this.rekeningnummer = rekeningnummer;
+    }
+    
+    public final void setHouder(String houder){
+                    this.houder = houder;
+        }
+    
+    public double getSaldo(){
+        return saldo;
+        
+    }
+
+    public String getHouder() {
+        if (houder == "onbekend"){ 
+            return ("NB");
+        }
+        else 
+        return houder;
+    }
+    
+     public void setNumber(double saldo) {
+         this.number = number;
+         
+          }
+    public double getNumber(){
+        return number;
+        
+    }
+    
+}
